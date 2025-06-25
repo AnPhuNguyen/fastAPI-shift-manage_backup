@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Staff</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px 12px;
+            text-align: left;
+        }
+        tr + tr th, tr + tr td {
+            border-top: none;
+        }
+        .highlight {
+            background-color: #ff9999;
+        }
+    </style>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div id="userInfo" class="bg-success text-light p-3 w-100"></div>
+    <div class="container justify-content-center align-items-center">
+        <div class="row">
+            <div class="col-7">
+                <h2>Welcome to shift managing app!</h2>
+                <h5>role: staff</h5>
+            </div>
+            <div class="col">
+                <button id="logoutBtn" class="m-3">Logout</button>
+                <button id="chatBtn">To chatroom</button>
+            </div>
+            <hr style="height:2px;border-width:0;color:gray;background-color:gray" >
+        </div>
+        
+        <div class="row">
+            <p>Your week's timetable for shifts below (pink is the current day)</p>
+            <div style="overflow-x:auto;">
+                <table class="table-bordered" id="timetableSector">
+                    <tr>
+                        <th></th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                        <th>Saturday</th>
+                        <th>Sunday</th>
+                    </tr>
+                    <tr id="dateRow">
+                        <td>Date -></td>
+                        <td id="monDate"></td>
+                        <td id="tueDate"></td>
+                        <td id="wedDate"></td>
+                        <td id="thuDate"></td>
+                        <td id="friDate"></td>
+                        <td id="satDate"></td>
+                        <td id="sunDate"></td>
+                    </tr>
+                    <tr>
+                        <td>Sáng</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Chiều</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Tối</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <br><br>
+        <button id="toggle_detail" class="btn btn-primary">Toggle shift detail</button>
+        <br><br>
+        <div class="row" id="shiftDetailSection" style="display: none;">
+            <table id="shift_detail" class="table-bordered"></table>
+        </div>
+        <br><br><br>
+    </div>
+
+    <script>
+        btnDetail = document.getElementById('toggle_detail')
+        shiftDetail = document.getElementById('shiftDetailSection')
+        var shown = false
+        btnDetail.addEventListener('click',() => {
+            if (shown) {
+                shiftDetail.style.display = 'none';
+                shown = false;
+            }
+            else {
+                shiftDetail.style.display = 'block';
+                shown = true;
+            }     
+        });
+
+    </script>
+    
+    <script src="/static/js/staff.js"></script>
+    <script src="/static/js/success.js"></script>
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

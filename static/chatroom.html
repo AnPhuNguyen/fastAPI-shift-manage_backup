@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Public chatroom</title>
+    <!-- Bootstrap CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container mt-3">
+        <h1>FastAPI WebSocket Chat</h1>
+        <h2>Your ID: <span id="ws-id"></span></h2>
+        <br>
+        <button id="goback" class="btn btn-outline-primary mt-2">Quay lại trang chính</button>
+        <br><br>
+        <form action="" onsubmit="sendMessage(event)">
+            <input type="text" class="form-control" id="messageText" autocomplete="off" />
+            <button class="btn btn-outline-primary mt-2">Send</button>
+        </form>
+        <div class="bg-gradient bg-warning p-1" style="overflow-x:auto; height: 500px;">
+            <ul id='messages' class="mt-5"></ul>
+        </div>
+    </div>
+
+    <script src="/static/js/chatroom.js"></script>
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

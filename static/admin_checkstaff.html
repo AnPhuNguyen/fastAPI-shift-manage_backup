@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Staff checking</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        tr+tr th,
+        tr+tr td {
+            border-top: none;
+        }
+
+        .highlight {
+            background-color: #ff9999;
+        }
+    </style>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row p-2 bg-info">
+            <p>checking staff...</p>
+            <div id="staffInfo"></div>
+        </div>
+        <div class="row">
+            <button id="goback">Quay lại trang chính</button>
+        </div>
+        <br>
+        <div class="row">
+            <table class="table-bordered" style="overflow-x:auto;">
+                <tr>
+                    <th></th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                    <th>Sunday</th>
+                </tr>
+                <tr id="dateRow">
+                    <td>Date -></td>
+                    <td id="monDate"></td>
+                    <td id="tueDate"></td>
+                    <td id="wedDate"></td>
+                    <td id="thuDate"></td>
+                    <td id="friDate"></td>
+                    <td id="satDate"></td>
+                    <td id="sunDate"></td>
+                </tr>
+
+
+                <tr>
+                    <td>Sáng</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Chiều</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Tối</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br<br>
+        </div>
+        <br><br>
+        <div class="row">
+            <form id="shiftEdit">
+                <br><br>
+                <label for="day">chọn ngày để thay đổi</label>
+                <select name="day" id="day">
+                    <option value="monday">monday</option>
+                    <option value="tuesday">tuesday</option>
+                    <option value="wednesday">wednesday</option>
+                    <option value="thursday">thursday</option>
+                    <option value="friday">friday</option>
+                    <option value="saturday">saturday</option>
+                    <option value="sunday">sunday</option>
+
+                </select>
+                <br><br>
+
+                <label for="periods">nhập buổi cần đổi đến, không dấu, cách nhau bằng ','; hay để rỗng nếu muốn xóa hết
+                    ngày đó. Ví dụ:
+                    'sang,chieu,toi'</label><br><br>
+                <input type="text" id="periods" name="periods"><br><br>
+                <input type="submit" value="thay đổi giờ làm việc của ngày">
+            </form>
+            <br>
+            <p id="error" style="color:red;"></p>
+        </div>
+        <div class="row">
+
+        </div>
+    </div>
+
+    <br><br>
+
+        <script src="/static/js/bootstrap.bundle.min.js"></script>
+        <script src="/static/js/admin_checkstaff.js"></script>
+</body>
